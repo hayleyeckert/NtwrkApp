@@ -1,9 +1,6 @@
 //
-//  Food.swift
-//  yummyDesserts2
-//
-//  Created by Susan Starkman on 7/28/15.
-//  Copyright (c) 2015 The Code Lady. All rights reserved.
+//  Ntwrk Array Creator
+//  Michayal Mathew 2018
 //
 
 import Foundation
