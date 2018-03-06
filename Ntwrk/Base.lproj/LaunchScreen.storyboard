@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="PingFang.ttc">
-            <string>PingFangTC-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -23,41 +19,28 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NTWRK@app" translatesAutoresizingMaskIntoConstraints="NO" id="xQR-KU-5qE">
-                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ntwrk-Ship_Logo.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xQR-KU-5qE">
+                                <rect key="frame" x="8" y="57" width="359" height="698"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ntwrk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4x-pg-IHf">
-                                <rect key="frame" x="53.5" y="481" width="267" height="131"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="131" id="x4Q-IV-oNg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="98"/>
-                                <color key="textColor" red="0.0" green="0.46574187278747559" blue="0.71087914705276489" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xQR-KU-5qE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7xe-sX-9EC"/>
-                            <constraint firstItem="xQR-KU-5qE" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="44" id="F7f-Ml-qMD"/>
-                            <constraint firstAttribute="trailing" secondItem="xQR-KU-5qE" secondAttribute="trailing" id="GAI-ZI-onl"/>
-                            <constraint firstItem="xQR-KU-5qE" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="IWp-ui-ar2"/>
-                            <constraint firstItem="z4x-pg-IHf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MhS-6o-FxG"/>
-                            <constraint firstItem="z4x-pg-IHf" firstAttribute="top" secondItem="xQR-KU-5qE" secondAttribute="bottom" constant="42" id="gFU-P2-OgL"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="z4x-pg-IHf" secondAttribute="bottom" constant="55" id="hyJ-dC-E7f"/>
-                            <constraint firstItem="xQR-KU-5qE" firstAttribute="centerX" secondItem="z4x-pg-IHf" secondAttribute="centerX" id="tLc-SJ-Xec"/>
+                            <constraint firstItem="xQR-KU-5qE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="aAj-qU-l8a"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="xQR-KU-5qE" secondAttribute="bottom" constant="23" id="bwV-rk-Wg4"/>
+                            <constraint firstItem="xQR-KU-5qE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="co1-og-Ghk"/>
+                            <constraint firstItem="xQR-KU-5qE" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-8" id="xyn-YQ-jpN"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.399999999999999" y="373.89162561576359"/>
         </scene>
     </scenes>
     <resources>
-        <image name="NTWRK@app" width="1024" height="1024"/>
+        <image name="Ntwrk-Ship_Logo.png" width="720" height="720"/>
     </resources>
 </document>

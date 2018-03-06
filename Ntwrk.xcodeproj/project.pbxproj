@@ -21,6 +21,9 @@
 		28D32822201DA4B30046D530 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D32821201DA4B30046D530 /* MapKit.framework */; };
 		A05FB31E7259E8203CBD66CF /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AD9CE092069703BF818469 /* libPods-Example.a */; };
 		C4E779E12038EF4C008CE8B5 /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E779E02038EF4B008CE8B5 /* Ref.swift */; };
+		EE443CE4204E22910058B1AB /* Ntwrk-Ship@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE443CE1204E22900058B1AB /* Ntwrk-Ship@3x.png */; };
+		EE443CE5204E22910058B1AB /* Ntwrk-Ship@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE443CE2204E22900058B1AB /* Ntwrk-Ship@2x.png */; };
+		EE443CE9204E23290058B1AB /* Ntwrk-Ship_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EE443CE8204E23290058B1AB /* Ntwrk-Ship_Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +59,9 @@
 		A2AD9CE092069703BF818469 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E779E02038EF4B008CE8B5 /* Ref.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		E6EBDFBCB4454976FCEA17D9 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		EE443CE1204E22900058B1AB /* Ntwrk-Ship@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ntwrk-Ship@3x.png"; sourceTree = "<group>"; };
+		EE443CE2204E22900058B1AB /* Ntwrk-Ship@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ntwrk-Ship@2x.png"; sourceTree = "<group>"; };
+		EE443CE8204E23290058B1AB /* Ntwrk-Ship_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ntwrk-Ship_Logo.png"; sourceTree = "<group>"; };
 		EE6C4494B4C0312B5F8B17D6 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +99,7 @@
 		10905A801BFE8FF9002AA119 /* Ntwrk */ = {
 			isa = PBXGroup;
 			children = (
+				EE443CE8204E23290058B1AB /* Ntwrk-Ship_Logo.png */,
 				10905A811BFE8FF9002AA119 /* AppDelegate.swift */,
 				10905A831BFE8FF9002AA119 /* ViewController.swift */,
 				28BFF27C201DBAA9001F183D /* myCell2.swift */,
@@ -105,6 +112,9 @@
 				28BFF282201DBAC6001F183D /* DetailViewcontroller.swift */,
 				10905A951BFE91EB002AA119 /* ObjectiveCHeader.h */,
 				28BFF286201DBAD8001F183D /* TableViewController2.swift */,
+				EE443CE7204E23010058B1AB /* New Group */,
+				EE443CE2204E22900058B1AB /* Ntwrk-Ship@2x.png */,
+				EE443CE1204E22900058B1AB /* Ntwrk-Ship@3x.png */,
 				28BFF288201DBAE1001F183D /* MapController.swift */,
 				280A483F201D7AC800D7E8FF /* ProfileViewController.swift */,
 			);
@@ -118,6 +128,13 @@
 				E6EBDFBCB4454976FCEA17D9 /* Pods-Example.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE443CE7204E23010058B1AB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		F9B4D6635D647DE1C863DF9F /* Frameworks */ = {
@@ -201,6 +218,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE443CE9204E23290058B1AB /* Ntwrk-Ship_Logo.png in Resources */,
+				EE443CE4204E22910058B1AB /* Ntwrk-Ship@3x.png in Resources */,
+				EE443CE5204E22910058B1AB /* Ntwrk-Ship@2x.png in Resources */,
 				10905A8C1BFE8FF9002AA119 /* LaunchScreen.storyboard in Resources */,
 				10905A891BFE8FF9002AA119 /* Assets.xcassets in Resources */,
 				10905A871BFE8FF9002AA119 /* Main.storyboard in Resources */,
