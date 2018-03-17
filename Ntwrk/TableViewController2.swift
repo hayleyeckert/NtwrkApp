@@ -1,9 +1,6 @@
 //
 //  TableViewController2.swift
-//  SuperCool_V.2
-//
-//  Created by Michayal Mathew on 7/14/16.
-//  Copyright © 2016 David. All rights reserved.
+// 
 //
 import UIKit
 
@@ -11,7 +8,7 @@ import UIKit
 class TableViewController2: UITableViewController {
     
     var RefArray:[Ref] = [Ref]()
-    var RefData = ["Michayal","Hayley","Billy","Cyrus","ElonMusk","MichaelScott","KobeBryant","EKingGill","JeffZhao"]
+    @objc var RefData = ["Michayal","Hayley","Billy","Cyrus","ElonMusk","MichaelScott","KobeBryant","EKingGill","JeffZhao"]
     
     
     override func viewDidLoad() {
@@ -46,7 +43,7 @@ class TableViewController2: UITableViewController {
     
     // MARK: - Table view data source
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1

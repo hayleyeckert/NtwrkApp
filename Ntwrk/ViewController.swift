@@ -2,8 +2,6 @@
 //  ViewController.swift
 //  Example
 //
-//  Created by Li Jiantang on 19/11/2015.
-//  Copyright © 2015 Carma. All rights reserved.
 //
 
 import UIKit
@@ -15,17 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnProfile: UIButton!
     
-    // You still need to set appId and URLScheme in Info.plist, follow this instruction: https://developer.linkedin.com/docs/ios-sdk
-    let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "77tn2ar7gq6lgv", clientSecret: "iqkDGYpWdhf7WKzA", state: "DLKDJF46ikMMZADfdfds", permissions: ["r_basicprofile", "r_emailaddress"], redirectUrl: "https://github.com/tonyli508/LinkedinSwift"))
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //consoleTextView.layer.cornerRadius = 10.0
-        //consoleTextView.layer.borderColor = UIColor.orange.cgColor
-        //consoleTextView.layer.borderWidth = 1.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,142 +26,81 @@ class ViewController: UIViewController {
      Login with Linkedin
      */
     @IBAction func login() {
-        
-        /**
-        *  Yeah, Just this simple, try with Linkedin installed and without installed
-        *
-        *   Check installed if you want to do different UI: linkedinHelper.isLinkedinAppInstalled()
-        *   Access token later after login: linkedinHelper.lsAccessToken
-        */
-        
-        linkedinHelper.authorizeSuccess({ [unowned self] (lsToken) -> Void in
-            self.requestProfile()
-           // self.writeConsoleLine("Login success") //lsToken: \(lsToken)
-        }, error: { [unowned self] (error) -> Void in
+        LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION, LISDK_EMAILADDRESS_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: { (success) in
+            let session = LISDKSessionManager.sharedInstance().session
             
-            //self.writeConsoleLine("Encounter error: \(error.localizedDescription)")
-        }, cancel: { [unowned self] () -> Void in
+            let url = "https://api.linkedin.com/v1/people/~:(id,public-profile-url,first-name,last-name,email-address,industry,location,headline,picture-url,summary,positions:(title))?format=json"            
             
-          //  self.writeConsoleLine("User Cancelled!")
-        })
-        linkedinHelper.requestURL("https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,picture-url,picture-urls::(original),positions,date-of-birth,phone-numbers,location)?format=json", requestType: LinkedinSwiftRequestGet, success: { (response) -> Void in
-            
-           // self.writeConsoleLine("Request success with response: \(response)")
-            let firstName = response.jsonObject["firstName"]!
-            let lastName = response.jsonObject["lastName"]!
-            let emailAdress = response.jsonObject["emailAddress"]!
-            let location = response.jsonObject["location"]!
-            let pictureUrl = response.jsonObject["pictureUrl"]!
-            let positions = response.jsonObject["positions"]!
-            
-            print(response.jsonObject["emailAddress"]!)
-            print(firstName, lastName)
-            print(response.jsonObject["location.name"])
-            
-            
-            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            //let ProfileController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-            
-            //ProfileController.NameString = "Michayal Mathew"//firstName as! String
-            //ProfileController.LocString = "Houston, TX" //location as! String
-            //ProfileController.PosString = "Nerd.tamu.edu" //positions as! String
-            
-            //self.present(ProfileController, animated: true, completion: nil)
-            
-        }) { [unowned self] (error) -> Void in
-            
-           // self.writeConsoleLine("Encounter error: \(error.localizedDescription)")
-        }
+            if (LISDKSessionManager.hasValidSession()) {
+                
+                LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) in
+                    
+                    print(url)
+                    let dict = self.StringToDictionary(text: (response?.data)!)
+ 
+                    let lastName = dict?["lastName"]!
+                    let firstName = dict?["firstName"]!
+                    let email = dict?["emailAddress"]! as! String
+                    let profile = dict?["publicProfileUrl"]! as! String
+                    let industry = dict?["industry"]! as! String
+                    let summary = dict?["summary"] as! String
+                    let location : Dictionary = dict?["location"]! as! Dictionary<String, Any>
+                    let City: String = location["name"]! as! String
 
-    }
-
-    /**
-     Request profile for your just logged in account
-     */
-    //let response = jsonWithArrayRoot as? [Any]
-    @IBAction func requestProfile() {
-        
-        linkedinHelper.requestURL("https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,picture-url,picture-urls::(original),positions,date-of-birth,phone-numbers,location)?format=json", requestType: LinkedinSwiftRequestGet, success: { (response) -> Void in
-            print(response)
-            //self.writeConsoleLine("Request success with response: \(response)")
-            let firstName = response.jsonObject["firstName"]!
-            let lastName = response.jsonObject["lastName"]!
-            let emailAdress = response.jsonObject["emailAddress"]!
-            let location : Dictionary = response.jsonObject["location"]! as! Dictionary<String, Any>
-            var City: String = location["name"]! as! String
-            //let name = location!["name"]!
-            let pictureUrls : Dictionary = response.jsonObject["pictureUrls"]! as! Dictionary<String, Any>
-            let pictureArray : Array<NSObject> = pictureUrls["values"] as! Array<NSObject>
-            let picture = pictureArray[0]
-            let positions = response.jsonObject["positions"]!
-            print(positions)
-         /*   let data = (positions as AnyObject).data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false)!
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
-                if let names = json["names"] as? [String] {
-                    print(names)
-                }
-            } catch let error as NSError {
-                print("Failed to load: \(error.localizedDescription)")
-            }*/
-            
-            
-            
-            let titlePositions : Dictionary = response.jsonObject["positions"]! as! Dictionary<String, Any>
-            print(titlePositions["_total"] as! Int)
-            print("hello")
-            var title = String()
-            if (titlePositions["_total"] as! Int != 0) {
-             let PositionObjects : Array<Dictionary> = titlePositions["values"] as! Array<Dictionary<String,Any>>
-             title = PositionObjects[0]["title"]! as! String
-            }
-            else {
-                 title  = ""
-            }
-            print(title)
-            print(firstName, lastName)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let ProfileController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-            
-            ProfileController.NameString = (firstName as! String) + " " + (lastName as! String)
-            ProfileController.LocString = City
-            ProfileController.PosString = title //positions as! String
-            //ProfileController.PicString = picture as! String
-            let URL_IMAGE = URL(string: picture as! String)
-            let session = URLSession(configuration: .default)
-            let getImageFromURL = session.dataTask(with: URL_IMAGE!) { (data, response, error) in
-                if let e = error
-                {
-                    print("Error occurred: \(e)")
-                }
-                else {
-                    if (response as! HTTPURLResponse) != nil {
-                        if let imageData = data {
-                            let image = UIImage(data: imageData)
-                            ProfileController.PicString = image!
-                        }
-                        else {
-                            print("Image is corrupted")
-                        }
+                    //print("Your first name is \(dict?["firstName"]!)")
+                    //print("Your last name is \(dict?["lastName"]!)")
+                    //print("Your email is ", email)
+                    //print("Your industry is \(dict?["industry"]!)")
+                    // print("Your summary is ", summary)
+                    // print("Your city is ", City)
+                    
+                    let titlePositions : Dictionary = dict?["positions"]! as! Dictionary<String, Any>
+                    var title = String()
+                    if (titlePositions["_total"] as! Int != 0) {
+                        let PositionObjects : Array<Dictionary> = titlePositions["values"] as! Array<Dictionary<String,Any>>
+                        title = PositionObjects[0]["title"]! as! String
+                        //print("Your title is ", title)
                     }
                     else {
-                        print("No response from server")
+                        title  = ""
                     }
-                }
-            }
-            getImageFromURL.resume()
-            self.present(ProfileController, animated: true, completion: nil)
-            
-            
-        }) { [unowned self] (error) -> Void in
+                    
+                    //let pictureUrls : Dictionary = dict?["pictureUrls"]! as! Dictionary<String, Any>
+                    //print("Your photo is \(dict?["pictureUrl"]!)")
+                    //let pictureArray : Array<NSObject> = pictureUrls["values"] as! Array<NSObject>
+                    //let picture = pictureArray[0]
+                    let picture = dict?["pictureUrl"]
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let ProfileController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+                    
+                    ProfileController.NameString = (firstName as! String) + " " + (lastName as! String)
+                    ProfileController.LocString = City
+                    ProfileController.PosString = title 
+                    let URL_IMAGE = URL(string: picture as! String)
                 
-            //self.writeConsoleLine("Encounter error: \(error.localizedDescription)")
+                    self.present(ProfileController, animated: true, completion: nil)
+                    
+                }, error: { (error) in
+                    print("Error \(error)")
+                })
+            }
+        }) { (error) in
+            print("Error \(error)")
         }
-        
-        //print(LSResponse);
+
     }
-    /*
+    func StringToDictionary(text: String)-> [String: Any]?{
+        if let data = text.data(using: .utf8) {
+            do{
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            }catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+    
     fileprivate func writeConsoleLine(_ log: String, funcName: String = #function) {
         
         DispatchQueue.main.async { () -> Void in
@@ -189,7 +117,7 @@ class ViewController: UIViewController {
             self.consoleTextView.scrollRectToVisible(rect, animated: true)
         }
     }
- */
+ 
     
 }
 

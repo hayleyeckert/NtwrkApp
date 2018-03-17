@@ -20,11 +20,11 @@ import UserNotifications
 //import AlamoFire
 
 class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    var locationManager: CLLocationManager = CLLocationManager()
+    @objc var locationManager: CLLocationManager = CLLocationManager()
     @IBOutlet var mapView: MKMapView!
     
-    let ENTERED_REGION_MESSAGE = "Entered MSC"
-    let EXITED_REGION_MESSAGE = "Leave MSC"
+    @objc let ENTERED_REGION_MESSAGE = "Entered MSC"
+    @objc let EXITED_REGION_MESSAGE = "Leave MSC"
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let circleRenderer = MKCircleRenderer(overlay: overlay)
@@ -57,8 +57,8 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    let regionRadius : CLLocationDistance = 1000
-    func centerMapOnLocation(location: CLLocation){
+    @objc let regionRadius : CLLocationDistance = 1000
+    @objc func centerMapOnLocation(location: CLLocation){
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
         self.mapView.setRegion(coordinateRegion, animated: true)
     }
@@ -72,7 +72,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         mapView.setRegion(region, animated: true)
     }
     
-    func setupData() {
+    @objc func setupData() {
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
             
             // 2. region data
@@ -103,7 +103,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         }
     }
     
-    func setupDataAirport() {
+    @objc func setupDataAirport() {
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
             
             // 2. region data

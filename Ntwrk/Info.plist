@@ -21,14 +21,14 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>li4761834</string>
+				<string>li4784454</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LIAppId</key>
-	<string>4761834</string>
+	<string>4784454</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>linkedin</string>

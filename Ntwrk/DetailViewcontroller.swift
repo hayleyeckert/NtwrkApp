@@ -1,7 +1,6 @@
 //
 //  Ref.swift
 //
-//  Copyright (c) 2016 MizoApps. All rights reserved.
 //
 
 
@@ -17,10 +16,10 @@ class DetailViewcontroller: UIViewController {
     @IBOutlet weak var LocLabel: UILabel!
     @IBOutlet var PosLabel: UILabel!
     
-    var RefImage = ""
-    var RefName = ""
-    var RefLoc = ""
-    var RefPos = ""
+    @objc var RefImage = ""
+    @objc var RefName = ""
+    @objc var RefLoc = ""
+    @objc var RefPos = ""
     
     
     
