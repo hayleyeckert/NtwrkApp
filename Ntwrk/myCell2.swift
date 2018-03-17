@@ -1,9 +1,6 @@
 //
 //  myCell2.swift
-//  SuperCool_V.2
-//
-//  Created by Michayal Mathew on 7/14/16.
-//  Copyright © 2016 David. All rights reserved.
+//  Ntwrk
 //
 
 import UIKit

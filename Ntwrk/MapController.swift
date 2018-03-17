@@ -2,9 +2,7 @@
 //  MapController.swift
 //  Ntwrk
 //
-//  Created by Hayley Eckert on 1/27/18.
-//  Copyright © 2018 Hayley Eckert. All rights reserved.
-//
+
 class MSCCoordinates : NSObject, MKAnnotation{
     var coordinate = CLLocationCoordinate2D(latitude: 30.6117, longitude: -96.3417)
     var title: String? = "MSC"
@@ -17,7 +15,6 @@ import UIKit
 import MapKit
 import CoreLocation
 import UserNotifications
-//import AlamoFire
 
 class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var locationManager: CLLocationManager = CLLocationManager()
@@ -181,15 +178,5 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
 
         present(ac, animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

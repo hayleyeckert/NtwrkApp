@@ -1,7 +1,6 @@
 //
-//  Ref.swift
-//
-//  Copyright (c) 2016 MizoApps. All rights reserved.
+// DetailViewcontroller.swift
+// Ntwrk
 //
 
 

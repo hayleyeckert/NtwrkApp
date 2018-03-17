@@ -1,9 +1,6 @@
 //
 //  ObjectiveCHeader.h
-//  Example
-//
-//  Created by Li Jiantang on 19/11/2015.
-//  Copyright © 2015 Carma. All rights reserved.
+//  Ntwrk
 //
 
 #ifndef ObjectiveCHeader_h

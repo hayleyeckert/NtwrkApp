@@ -1,6 +1,6 @@
 //
-//  Ntwrk Array Creator
-//  Michayal Mathew 2018
+//  Ref.swift
+//  Ntwrk
 //
 
 import Foundation
