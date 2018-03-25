@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController {
         NameLabel.text = NameString
         LocLabel.text = LocString
         PosLabel.text = PosString
-        ProfPic.image = PicString
+        //ProfPic.image = PicString
         
         // Do any additional setup after loading the view.
     }

@@ -40,7 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		10905A7E1BFE8FF9002AA119 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10905A7E1BFE8FF9002AA119 /* Ntwrk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ntwrk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10905A811BFE8FF9002AA119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10905A831BFE8FF9002AA119 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10905A861BFE8FF9002AA119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		10905A7F1BFE8FF9002AA119 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				10905A7E1BFE8FF9002AA119 /* Example.app */,
+				10905A7E1BFE8FF9002AA119 /* Ntwrk.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 			);
 			name = Example;
 			productName = Example;
-			productReference = 10905A7E1BFE8FF9002AA119 /* Example.app */;
+			productReference = 10905A7E1BFE8FF9002AA119 /* Ntwrk.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -183,6 +183,7 @@
 				TargetAttributes = {
 					10905A7D1BFE8FF9002AA119 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = YY29KCL88S;
 						LastSwiftMigration = 0810;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -434,7 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YY29KCL88S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,8 +453,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "Hayley-Eckert.Ntwrk";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = Michayal.Ntwrk;
+				PRODUCT_NAME = Ntwrk;
 				SWIFT_OBJC_BRIDGING_HEADER = Ntwrk/ObjectiveCHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
@@ -465,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YY29KCL88S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -483,8 +484,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "Hayley-Eckert.Ntwrk";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = Michayal.Ntwrk;
+				PRODUCT_NAME = Ntwrk;
 				SWIFT_OBJC_BRIDGING_HEADER = Ntwrk/ObjectiveCHeader.h;
 				SWIFT_VERSION = 3.0;
 			};

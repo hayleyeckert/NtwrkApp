@@ -11,30 +11,30 @@ import UIKit
 class TableViewController2: UITableViewController {
     
     var RefArray:[Ref] = [Ref]()
-    var RefData = ["Michayal","Hayley","Billy","Cyrus","ElonMusk","MichaelScott","KobeBryant","EKingGill","JeffZhao"]
-    
+    var RefData = ["Hayley", "Billy"] //["Michayal","Hayley","Billy","Cyrus","ElonMusk","MichaelScott","KobeBryant","EKingGill","JeffZhao"]
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let Michayal = Ref(imageName: "Michayal.jpg", description: "Michayal Mathew", position:  "Intern at NASA", location: "College Station, TX")
+        //let Michayal = Ref(imageName: "Michayal.jpg", description: "Michayal Mathew", position:  "Intern at NASA", location: "College Station, TX")
         let Hayley = Ref(imageName: "Hayley.jpg", description: "Hayley Eckert", position: "Intern at Google", location: "College Station, TX")
-        let Billy = Ref(imageName: "Billy.jpg", description: "Bill Newman", position: "Intern at AT&T", location: "College Station, TX")
-        let Cyrus = Ref(imageName: "Cyrus.jpg", description: "Cyrus Roshan", position: "Intern at LinkedIn", location: "Dallas, TX")
-        let ElonMusk = Ref(imageName: "ElonMusk.jpg", description: "Elon Musk", position: "CEO of Tesla/SpaceX", location: "Mars")
-        let MichaelScott = Ref(imageName: "MichaelScott.JPEG", description: "Michael Scott", position: "Dunder Mifflin, Inc.", location: "Scranton, PA")
+        let Billy = Ref(imageName: "Billy.jpg", description: "Bill Newman", position: "Intern at Deloitte", location: "College Station, TX")
+        //let Cyrus = Ref(imageName: "Cyrus.jpg", description: "Cyrus Roshan", position: "Intern at LinkedIn", location: "Dallas, TX")
+        //let ElonMusk = Ref(imageName: "ElonMusk.jpg", description: "Elon Musk", position: "CEO of Tesla/SpaceX", location: "Mars")
+       // let MichaelScott = Ref(imageName: "MichaelScott.JPEG", description: "Michael Scott", position: "Dunder Mifflin, Inc.", location: "Scranton, PA")
         //let KobeBryant = Ref(imageName: "R23.jpg", description: "R23", position: "CEO", location: "College Station, TX")
-        let EKingGill = Ref(imageName: "EKingGill.JPEG", description: "E King Gill", position: "12th Man", location: "College Station, TX")
+        //let EKingGill = Ref(imageName: "EKingGill.JPEG", description: "E King Gill", position: "12th Man", location: "College Station, TX")
         //let JeffZhao = Ref(imageName: "R124.jpg", description: "R124", position: "CEO", location: "College Station, TX")
 
-        RefArray.append(Michayal)
+        //RefArray.append(Michayal)
         RefArray.append(Hayley)
         RefArray.append(Billy)
-        RefArray.append(Cyrus)
-        RefArray.append(ElonMusk)
-        RefArray.append(MichaelScott)
+        //RefArray.append(Cyrus)
+        //RefArray.append(ElonMusk)
+       // RefArray.append(MichaelScott)
        // RefArray.append(KobeBryant)
-        RefArray.append(EKingGill)
+       // RefArray.append(EKingGill)
        // RefArray.append(JeffZhao)
         
     }

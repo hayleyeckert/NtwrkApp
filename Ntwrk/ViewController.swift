@@ -101,9 +101,10 @@ class ViewController: UIViewController {
             let location : Dictionary = response.jsonObject["location"]! as! Dictionary<String, Any>
             var City: String = location["name"]! as! String
             //let name = location!["name"]!
-            let pictureUrls : Dictionary = response.jsonObject["pictureUrls"]! as! Dictionary<String, Any>
-            let pictureArray : Array<NSObject> = pictureUrls["values"] as! Array<NSObject>
-            let picture = pictureArray[0]
+            //let pictureUrls : Dictionary = response.jsonObject["pictureUrls"]! as! Dictionary<String, Any>
+            //let pictureArray : Array<NSObject> = pictureUrls["values"] as! Array<NSObject>
+            //let picture = pictureArray[0]
+            let picture = response.jsonObject["pictureUrl"]
             let positions = response.jsonObject["positions"]!
             print(positions)
          /*   let data = (positions as AnyObject).data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false)!
@@ -150,7 +151,7 @@ class ViewController: UIViewController {
                     if (response as! HTTPURLResponse) != nil {
                         if let imageData = data {
                             let image = UIImage(data: imageData)
-                            ProfileController.PicString = image!
+                            //ProfileController.PicString = image!
                         }
                         else {
                             print("Image is corrupted")
