@@ -20,9 +20,7 @@ class TableViewController2: UITableViewController {
         let Cyrus = Ref(imageName: "Cyrus.jpg", description: "Cyrus Roshan", position: "Intern at LinkedIn", location: "Dallas, TX")
         let ElonMusk = Ref(imageName: "ElonMusk.jpg", description: "Elon Musk", position: "CEO of Tesla/SpaceX", location: "Mars")
         let MichaelScott = Ref(imageName: "MichaelScott.JPEG", description: "Michael Scott", position: "Dunder Mifflin, Inc.", location: "Scranton, PA")
-        //let KobeBryant = Ref(imageName: "R23.jpg", description: "R23", position: "CEO", location: "College Station, TX")
         let EKingGill = Ref(imageName: "EKingGill.JPEG", description: "E King Gill", position: "12th Man", location: "College Station, TX")
-        //let JeffZhao = Ref(imageName: "R124.jpg", description: "R124", position: "CEO", location: "College Station, TX")
 
         RefArray.append(Michayal)
         RefArray.append(Hayley)
@@ -30,9 +28,7 @@ class TableViewController2: UITableViewController {
         RefArray.append(Cyrus)
         RefArray.append(ElonMusk)
         RefArray.append(MichaelScott)
-       // RefArray.append(KobeBryant)
         RefArray.append(EKingGill)
-       // RefArray.append(JeffZhao)
         
     }
     
@@ -41,17 +37,12 @@ class TableViewController2: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
         return RefArray.count
     }
     

@@ -21,7 +21,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     @IBOutlet var mapView: MKMapView!
     
     let ENTERED_REGION_MESSAGE = "Entered MSC"
-    let EXITED_REGION_MESSAGE = "Leave MSC"
+    let EXITED_REGION_MESSAGE = "Leaving MSC"
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let circleRenderer = MKCircleRenderer(overlay: overlay)
@@ -32,21 +32,23 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         return circleRenderer
     }
     
+    // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.mapView.delegate = self
         locationManager.allowsBackgroundLocationUpdates = true
         self.locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
+        
         mapView.showsUserLocation = true
         mapView.showsCompass = true
         mapView.showsScale = true
+        
         let initialLocation = CLLocation(latitude: 30.6119, longitude: -96.3417)
-        //mapView.addAnnotation(MSCCoordinates())
         centerMapOnLocation(location: initialLocation)
+        
         setupData()
-        setupDataAirport()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,8 +65,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     @IBAction func zoomIn(_ sender: AnyObject) {
         let userLocation = mapView.userLocation
         
-        let region = MKCoordinateRegionMakeWithDistance(
-            userLocation.location!.coordinate, 2000, 2000)
+        let region = MKCoordinateRegionMakeWithDistance(userLocation.location!.coordinate, 2000, 2000)
         
         mapView.setRegion(region, animated: true)
     }
@@ -78,8 +79,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
             let regionRadius = 50.0
             
             // 3. setup region
-            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,
-                                                                         longitude: coordinate.longitude), radius: regionRadius, identifier: title)
+            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude), radius: regionRadius, identifier: title)
             region.notifyOnExit = true;
             region.notifyOnEntry = true;
             locationManager.startMonitoring(for: region)
@@ -99,37 +99,6 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
             print("System can't track regions")
         }
     }
-    
-    func setupDataAirport() {
-        if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-            
-            // 2. region data
-            let title1 = "Easterwood Airport"
-            let coordinate1 = CLLocationCoordinate2DMake(30.5910076, -96.3627607)
-            let regionRadius1 = 50.0
-            
-            // 3. setup region
-            let region1 = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate1.latitude,
-                                                                         longitude: coordinate1.longitude), radius: regionRadius1, identifier: title1)
-            region1.notifyOnExit = true;
-            region1.notifyOnEntry = true;
-            locationManager.startMonitoring(for: region1)
-            
-            // 4. setup annotation
-            let restaurantAnnotation1 = MKPointAnnotation()
-            restaurantAnnotation1.coordinate = coordinate1;
-            restaurantAnnotation1.title = "Easterwood Airport";
-            mapView.addAnnotation(restaurantAnnotation1)
-            
-            // 5. setup circle
-            let circle1 = MKCircle(center: coordinate1, radius: regionRadius1)
-            self.mapView.add(circle1)
-            
-        }
-        else {
-            print("System can't track regions")
-        }
-    }
  
     func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
         print("Started Monitoring Region: \(region.identifier)")
@@ -143,22 +112,21 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         print(EXITED_REGION_MESSAGE)
     }
     
-    func locationManager(_ manager: CLLocationManager,
-                                  monitoringDidFailFor region: CLRegion?,
-                                  withError error: Error) {
-        print("MSC Fail")
+    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        print("Failure to add pin to MSC")
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "MKAnnotation"
         
-                let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
-                annotationView.isEnabled = true
-                annotationView.canShowCallout = true
+        let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
+        annotationView.isEnabled = true
+        annotationView.canShowCallout = true
                 
-                let btn = UIButton(type: .detailDisclosure)
-                annotationView.rightCalloutAccessoryView = btn
-                return annotationView
+        let btn = UIButton(type: .detailDisclosure)
+        annotationView.rightCalloutAccessoryView = btn
+        
+        return annotationView
         
     }
     
@@ -166,8 +134,7 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         
         let ac = UIAlertController(title: "Live Event", message: "Ntwrk Here", preferredStyle: .alert)
         let action = UIAlertAction(title: "Yes Please", style: .cancel, handler: { // Also action dismisses AlertController when pressed.
-            action in
-            self.performSegue(withIdentifier: "PopViewSegue", sender: nil)
+            action in self.performSegue(withIdentifier: "PopViewSegue", sender: nil)
             
 
         }

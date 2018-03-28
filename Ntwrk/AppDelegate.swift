@@ -2,23 +2,34 @@
 //  AppDelegate.swift
 //  Ntwrk
 //
+import UIKit
+import CoreLocation
+import Foundation
+import Firebase
+import GoogleSignIn
+
+// Constants for ProfileController
 var NameString = String()
 var LocString = String()
 var PosString = String()
 var PicString = String()
 
-
-import UIKit
-import CoreLocation
-
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Use Firebase library to configure APIs
+        FirebaseApp.configure()
+        
+        // Launch Google sign in
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
         return true
     }
 
@@ -51,6 +62,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return false
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+    }
+    
+    // Google Sign In Process
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        if let error = error {
+            print("Google sign in error:", error)
+        }
+        
+        /********* Authenticate user **********/
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        /********* Add new user **********/
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let currentUser = Auth.auth().currentUser
+        let userID = Auth.auth().currentUser?.uid
+        print(userID)
+        
+        // Check if user already exists
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            if (!snapshot.exists()) {
+                print("No user")
+                ref.child("users").child(userID!).setValue(["username": user.profile.email])
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        // Check if user has set up profile
+        ref.child("users").child(userID!).child("Job").observeSingleEvent(of: .value, with: { (snapshot) in
+            if (!snapshot.exists()) {
+                print("Need to update profile with information from LinkedIn")
+                // FIXME: Now, make sure the LinkedIn log in is called here (fake pushing the Log In with LinkedIn button?)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
     }
 
 }
