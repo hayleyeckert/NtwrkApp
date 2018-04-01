@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Ntwrk-Ship@2x.png",
+      "filename" : "Ntwrk-Ship.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Ntwrk-Ship@2x-1.png",
+      "filename" : "Ntwrk-Ship-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Ntwrk-Ship@3x.png",
+      "filename" : "Ntwrk-Ship-2.png",
       "scale" : "3x"
     }
   ],
