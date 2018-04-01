@@ -15,51 +15,75 @@ Latest version is based on [LinkedIn SDK 1.0.7](https://content.linkedin.com/con
 ## How to use
 
 ```ruby
-pod 'LinkedinSwift', '~> 1.6.5'
+pod 'LinkedinSwift', '~> 1.6.6'
 ```
 
 Check out Example project.
 
 - Setup configuration and helper instance.
 ```swift
-let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "77tn2ar7gq6lgv", clientSecret: "iqkDGYpWdhf7WKzA", state: "DLKDJF45DIWOERCM", permissions: ["r_basicprofile", "r_emailaddress"]))
+let linkedinHelper = LinkedinSwiftHelper(configuration: 
+    LinkedinSwiftConfiguration(
+        clientId: "77tn2ar7gq6lgv", 
+        clientSecret: "iqkDGYpWdhf7WKzA", 
+        state: "DLKDJF45DIWOERCM", 
+        permissions: ["r_basicprofile", "r_emailaddress"]
+    )
+)
+```
+Or if you want to present in a different ViewController, using:
+```swift
+let linkedinHelper = LinkedinSwiftHelper(
+    configuration: LinkedinSwiftConfiguration(
+        clientId: "77tn2ar7gq6lgv", 
+        clientSecret: "iqkDGYpWdhf7WKzA", 
+        state: "DLKDJF45DIWOERCM", 
+        permissions: ["r_basicprofile", "r_emailaddress"]
+    ), webOAuthPresent: yourViewController
+)
 ```
 - Setup Linkedin SDK settings: [instruction here](https://developer.linkedin.com/docs/ios-sdk)
 - Setup redirect handler in AppDelegate
 ```swift
+func application(application: UIApplication, 
+        openURL url: NSURL, 
+        sourceApplication: String?, 
+        annotation: AnyObject) -> Bool {
 
-	func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-	
-        // Linkedin sdk handle redirect
-        if LinkedinSwiftHelper.shouldHandleUrl(url) {
-            return LinkedinSwiftHelper.application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
-        }
-        
-        return false
-	}
+    // Linkedin sdk handle redirect
+    if LinkedinSwiftHelper.shouldHandleUrl(url) {
+        return LinkedinSwiftHelper.application(application, 
+                openURL: url, 
+                sourceApplication: sourceApplication, 
+                annotation: annotation
+        )
+    }
+    
+    return false
+}
 ```
 - Login:
 ```swift
-
-		linkedinHelper.authorizeSuccess({ (lsToken) -> Void in
-            //Login success lsToken
-        }, error: { (error) -> Void in
-            //Encounter error: error.localizedDescription
-        }, cancel: { () -> Void in
-            //User Cancelled!
-        })
+linkedinHelper.authorizeSuccess({ (lsToken) -> Void in
+    //Login success lsToken
+}, error: { (error) -> Void in
+    //Encounter error: error.localizedDescription
+}, cancel: { () -> Void in
+    //User Cancelled!
+})
 ```
 - Fetch profile:
 ```swift
-
-		linkedinHelper.requestURL("https://api.linkedin.com/v1/people/~?format=json", requestType: LinkedinSwiftRequestGet, success: { (response) -> Void in
-            
-            //Request success response
-            
-        }) { [unowned self] (error) -> Void in
-                
-            //Encounter error
-        }
+linkedinHelper.requestURL("https://api.linkedin.com/v1/people/~?format=json", 
+    requestType: LinkedinSwiftRequestGet, 
+    success: { (response) -> Void in
+    
+    //Request success response
+    
+}) { [unowned self] (error) -> Void in
+        
+    //Encounter error
+}
 ```
 
 Example project screenshots:
@@ -67,4 +91,8 @@ Example project screenshots:
 <p align="center">
 <img src="https://github.com/tonyli508/LinkedinSwift/blob/master/page_images/screenshot1.jpg" alt="Demo photo" width="56" height="100" />
 </p>
+
+## Known issues
+
+It seems Linkedin 1.0.7 messed up with `Bitcode support.` again. You need to turn off Bitcode to make it work.
 

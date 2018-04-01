@@ -312,26 +312,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndu-jQ-UPZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndu-jQ-UPZ">
                                 <rect key="frame" x="16" y="440" width="343" height="73"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="VdW-sc-ruJ"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP5-gd-Xul">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP5-gd-Xul">
                                 <rect key="frame" x="16" y="521" width="343" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Meo-B2-MB4"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Light" family="PingFang TC" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6p2-N2-qLt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6p2-N2-qLt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="432"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dzy-gL-CbC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -347,45 +344,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL4-ne-iw1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL4-ne-iw1">
                                 <rect key="frame" x="16" y="571" width="343" height="104"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="104" id="Lfh-XP-vmO"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="nL4-ne-iw1" firstAttribute="top" secondItem="hP5-gd-Xul" secondAttribute="bottom" id="0k1-Ml-CUc"/>
-                            <constraint firstItem="hP5-gd-Xul" firstAttribute="leading" secondItem="v0e-zC-bHP" secondAttribute="leadingMargin" id="2gj-5L-Q4D"/>
-                            <constraint firstItem="Ndu-jQ-UPZ" firstAttribute="top" secondItem="6p2-N2-qLt" secondAttribute="bottom" constant="8" symbolic="YES" id="6aA-ra-roB"/>
-                            <constraint firstItem="hP5-gd-Xul" firstAttribute="top" secondItem="Ndu-jQ-UPZ" secondAttribute="bottom" constant="8" id="89D-15-KWT"/>
-                            <constraint firstItem="Ndu-jQ-UPZ" firstAttribute="trailing" secondItem="v0e-zC-bHP" secondAttribute="trailingMargin" id="988-9i-0bA"/>
-                            <constraint firstItem="Ndu-jQ-UPZ" firstAttribute="leading" secondItem="hP5-gd-Xul" secondAttribute="leading" id="Iay-Me-Cti"/>
-                            <constraint firstItem="6p2-N2-qLt" firstAttribute="top" secondItem="v0e-zC-bHP" secondAttribute="top" id="OVH-VY-6rf"/>
-                            <constraint firstItem="Ndu-jQ-UPZ" firstAttribute="leading" secondItem="v0e-zC-bHP" secondAttribute="leadingMargin" id="S0G-D9-gp5"/>
-                            <constraint firstItem="6p2-N2-qLt" firstAttribute="top" secondItem="v0e-zC-bHP" secondAttribute="top" id="Srw-gv-IE0"/>
-                            <constraint firstItem="6p2-N2-qLt" firstAttribute="leading" secondItem="7zO-cZ-h5w" secondAttribute="leading" id="VZ2-KG-bNX"/>
-                            <constraint firstItem="7zO-cZ-h5w" firstAttribute="trailing" secondItem="nL4-ne-iw1" secondAttribute="trailing" constant="16" id="WK6-Yd-5pQ"/>
-                            <constraint firstItem="Ndu-jQ-UPZ" firstAttribute="top" secondItem="6p2-N2-qLt" secondAttribute="bottom" constant="8" id="WhH-Yh-GXu"/>
-                            <constraint firstItem="Ndu-jQ-UPZ" firstAttribute="trailing" secondItem="hP5-gd-Xul" secondAttribute="trailing" id="XAE-JG-KSI"/>
-                            <constraint firstItem="nL4-ne-iw1" firstAttribute="top" secondItem="hP5-gd-Xul" secondAttribute="bottom" id="Y8w-mo-y9V"/>
-                            <constraint firstItem="nL4-ne-iw1" firstAttribute="top" secondItem="hP5-gd-Xul" secondAttribute="bottom" id="ZLT-Tp-A3w"/>
-                            <constraint firstItem="7zO-cZ-h5w" firstAttribute="trailing" secondItem="6p2-N2-qLt" secondAttribute="trailing" id="cAh-PV-bfY"/>
-                            <constraint firstItem="hP5-gd-Xul" firstAttribute="leading" secondItem="nL4-ne-iw1" secondAttribute="leading" id="eaZ-zS-DMb"/>
-                            <constraint firstItem="hP5-gd-Xul" firstAttribute="trailing" secondItem="nL4-ne-iw1" secondAttribute="trailing" id="gzq-4e-BQY"/>
-                            <constraint firstItem="6p2-N2-qLt" firstAttribute="centerX" secondItem="Ndu-jQ-UPZ" secondAttribute="centerX" id="iSh-Vz-ekB"/>
-                            <constraint firstItem="6p2-N2-qLt" firstAttribute="leading" secondItem="7zO-cZ-h5w" secondAttribute="leading" id="kH3-P4-waq"/>
-                            <constraint firstItem="hP5-gd-Xul" firstAttribute="top" secondItem="Ndu-jQ-UPZ" secondAttribute="bottom" constant="8" id="pFw-P2-ROO"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="nL4-ne-iw1" secondAttribute="bottom" constant="-8" id="qJV-cb-HUA"/>
-                            <constraint firstItem="hP5-gd-Xul" firstAttribute="top" secondItem="Ndu-jQ-UPZ" secondAttribute="bottom" constant="8" symbolic="YES" id="qQ5-9k-KXX"/>
-                            <constraint firstItem="Ndu-jQ-UPZ" firstAttribute="leading" secondItem="v0e-zC-bHP" secondAttribute="leadingMargin" id="sW7-Rm-Qzh"/>
-                            <constraint firstItem="hP5-gd-Xul" firstAttribute="trailing" secondItem="v0e-zC-bHP" secondAttribute="trailingMargin" id="uIf-5W-4FP"/>
-                            <constraint firstItem="nL4-ne-iw1" firstAttribute="leading" secondItem="7zO-cZ-h5w" secondAttribute="leading" constant="16" id="ylT-Va-SZi"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7zO-cZ-h5w"/>
                     </view>
                     <toolbarItems/>
@@ -414,6 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYU-2T-IO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="260" y="-501"/>
         </scene>
     </scenes>
     <resources>

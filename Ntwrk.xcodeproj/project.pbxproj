@@ -21,6 +21,10 @@
 		28D32822201DA4B30046D530 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D32821201DA4B30046D530 /* MapKit.framework */; };
 		A05FB31E7259E8203CBD66CF /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AD9CE092069703BF818469 /* libPods-Example.a */; };
 		C4E779E12038EF4C008CE8B5 /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E779E02038EF4B008CE8B5 /* Ref.swift */; };
+		EE32F8C0207129D0000F9BA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE32F8BF207129D0000F9BA0 /* GoogleService-Info.plist */; };
+		EE32F8C4207137AF000F9BA0 /* Ntwrk-Ship@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE32F8C1207137AF000F9BA0 /* Ntwrk-Ship@3x.png */; };
+		EE32F8C5207137AF000F9BA0 /* Ntwrk-Ship.png in Resources */ = {isa = PBXBuildFile; fileRef = EE32F8C2207137AF000F9BA0 /* Ntwrk-Ship.png */; };
+		EE32F8C6207137AF000F9BA0 /* Ntwrk-Ship@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE32F8C3207137AF000F9BA0 /* Ntwrk-Ship@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +60,10 @@
 		A2AD9CE092069703BF818469 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E779E02038EF4B008CE8B5 /* Ref.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
 		E6EBDFBCB4454976FCEA17D9 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		EE32F8BF207129D0000F9BA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EE32F8C1207137AF000F9BA0 /* Ntwrk-Ship@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ntwrk-Ship@3x.png"; path = "Images.xcassets/Ntwrk-Ship@3x.png"; sourceTree = "<group>"; };
+		EE32F8C2207137AF000F9BA0 /* Ntwrk-Ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ntwrk-Ship.png"; path = "Images.xcassets/Ntwrk-Ship.png"; sourceTree = "<group>"; };
+		EE32F8C3207137AF000F9BA0 /* Ntwrk-Ship@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ntwrk-Ship@2x.png"; path = "Images.xcassets/Ntwrk-Ship@2x.png"; sourceTree = "<group>"; };
 		EE6C4494B4C0312B5F8B17D6 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,12 +101,16 @@
 		10905A801BFE8FF9002AA119 /* Ntwrk */ = {
 			isa = PBXGroup;
 			children = (
+				EE32F8BF207129D0000F9BA0 /* GoogleService-Info.plist */,
 				10905A811BFE8FF9002AA119 /* AppDelegate.swift */,
 				10905A831BFE8FF9002AA119 /* ViewController.swift */,
 				28BFF27C201DBAA9001F183D /* myCell2.swift */,
 				10905A851BFE8FF9002AA119 /* Main.storyboard */,
 				28BFF27E201DBAB3001F183D /* Sign-In-Large---Active.png */,
 				10905A881BFE8FF9002AA119 /* Assets.xcassets */,
+				EE32F8C2207137AF000F9BA0 /* Ntwrk-Ship.png */,
+				EE32F8C3207137AF000F9BA0 /* Ntwrk-Ship@2x.png */,
+				EE32F8C1207137AF000F9BA0 /* Ntwrk-Ship@3x.png */,
 				10905A8A1BFE8FF9002AA119 /* LaunchScreen.storyboard */,
 				10905A8D1BFE8FF9002AA119 /* Info.plist */,
 				C4E779E02038EF4B008CE8B5 /* Ref.swift */,
@@ -201,9 +213,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE32F8C5207137AF000F9BA0 /* Ntwrk-Ship.png in Resources */,
 				10905A8C1BFE8FF9002AA119 /* LaunchScreen.storyboard in Resources */,
 				10905A891BFE8FF9002AA119 /* Assets.xcassets in Resources */,
+				EE32F8C0207129D0000F9BA0 /* GoogleService-Info.plist in Resources */,
 				10905A871BFE8FF9002AA119 /* Main.storyboard in Resources */,
+				EE32F8C6207137AF000F9BA0 /* Ntwrk-Ship@2x.png in Resources */,
+				EE32F8C4207137AF000F9BA0 /* Ntwrk-Ship@3x.png in Resources */,
 				28BFF27F201DBAB3001F183D /* Sign-In-Large---Active.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,9 +275,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh",
+				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GTMOAuth2ViewTouch.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

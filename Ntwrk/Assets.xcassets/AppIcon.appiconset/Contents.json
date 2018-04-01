@@ -33,19 +33,19 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "NTWRK@2x.png",
+      "filename" : "Ntwrk-Ship@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "NTWRK@3x.png",
+      "filename" : "Ntwrk-Ship@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "NTWRK@app.png",
+      "filename" : "Ntwrk-Ship@2x-1.png",
       "scale" : "1x"
     }
   ],
