@@ -6,8 +6,9 @@
 import UIKit
 import Foundation
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var Scroller: UIScrollView!
     @IBOutlet weak var ProfPic: UIImageView!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var LocLabel: UILabel!
@@ -27,11 +28,11 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(PicString)
-        NameLabel.text = NameString
+      /*  NameLabel.text = NameString
         LocLabel.text = LocString
         PosLabel.text = PosString
         ProfPic.image = PicString
-        
+      */
         // Do any additional setup after loading the view.
     }
 
